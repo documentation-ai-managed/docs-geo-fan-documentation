@@ -1,0 +1,128 @@
+---
+title: Configuring Your Documentation Space
+description: Customize and manage your docs, including organization, themes, and integrations.
+---
+
+## Overview
+
+Tailor your GEO.fan documentation space to fit your project's needs. Organize content with a clear folder structure, apply custom branding, integrate version control, and handle exports efficiently. Follow these guides to set up a professional documentation site.
+
+<Columns cols={3}>
+  <Card title="Project Folders" icon="folder" href="#project-structure">
+    Structure your docs logically.
+  </Card>
+  <Card title="Custom Themes" icon="palette" href="#custom-themes">
+    Brand your site with colors and styles.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#version-control">
+    Sync docs with Git repositories.
+  </Card>
+</Columns>
+
+## Project Structure and Folders
+
+Organize your documentation into a scalable folder structure. Place core content in a `docs/` directory and separate themes, assets, and configs.
+
+Use this recommended layout:
+
+| Folder/Path       | Purpose                          | Example Content                  |
+|-------------------|----------------------------------|----------------------------------|
+| `docs/`           | Main documentation files        | `introduction.mdx`, `api.mdx`   |
+| `docs/guides/`    | Tutorial and how-to guides      | `quickstart.mdx`, `advanced.mdx`|
+| `public/assets/`  | Images, logos, and static files | `logo.svg`, `screenshots/`      |
+| `themes/`         | Custom styles and components    | `custom.css`, `components/`     |
+| `config/`         | Site configuration              | `site.json`, `nav.json`         |
+
+<Callout kind="tip">
+  Start with the basic `docs/` folder. Add subfolders as your project grows to maintain clarity.
+</Callout>
+
+## Custom Themes and Branding
+
+Apply your brand using GEO.fan's theme system. Set colors, fonts, and logos in the configuration file.
+
+<Steps>
+  <Step title="Edit Config" icon="edit-3">
+    Open `config/site.json` and update the theme section.
+  </Step>
+  <Step title="Set Brand Color" icon="palette">
+    Use your brand color, such as `#3B82F6` for GEO.fan.
+  </Step>
+  <Step title="Preview Changes" icon="eye">
+    Save and preview in the editor. Changes apply instantly.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="JSON,YAML">
+```json
+{
+  "theme": {
+    "primaryColor": "#3B82F6",
+    "fontFamily": "Inter, sans-serif",
+    "logo": "/assets/logo.svg"
+  }
+}
+```
+
+```yaml
+theme:
+  primaryColor: "#3B82F6"
+  fontFamily: "Inter, sans-serif"
+  logo: "/assets/logo.svg"
+```
+</CodeGroup>
+
+## Version Control for Docs
+
+Connect your documentation to Git for collaborative editing and history tracking. GEO.fan supports GitHub, GitLab, and Bitbucket.
+
+<Tabs>
+  <Tab title="GitHub" icon="github">
+    Generate a personal access token with repo permissions.
+    
+    ```bash
+    git remote add origin https://github.com/your-username/geo-fan-docs.git
+    git push -u origin main
+    ```
+    
+    Link the repo in GEO.fan's settings dashboard.
+  </Tab>
+  <Tab title="GitLab" icon="git-branch">
+    Create a project access token.
+    
+    ```bash
+    git remote add origin https://gitlab.com/your-group/geo-fan-docs.git
+    git push origin main
+    ```
+  </Tab>
+  <Tab title="Self-Hosted" icon="server">
+    Use SSH for secure access.
+    
+    ```bash
+    git remote add origin git@your-server.com:geo-fan-docs.git
+    git push origin main
+    ```
+  </Tab>
+</Tabs>
+
+<Expandable title="Advanced Git Sync Options" default-open="false">
+  Enable automatic pulls every 5 minutes or trigger syncs via webhooks. Configure branch protection to prevent direct edits.
+</Expandable>
+
+## Export and Import Options
+
+Export your docs as Markdown, JSON, or static HTML for backups or migration. Imports support ZIP archives or Git clones.
+
+<Callout kind="alert">
+  Exports include all assets. Large sites (>500MB) require premium storage.
+</Callout>
+
+To export:
+
+1. Navigate to Settings > Export.
+2. Select format (Markdown recommended).
+3. Download the ZIP.
+
+For imports, upload a ZIP or paste a Git URL. GEO.fan processes and publishes automatically.
+
+This setup ensures your documentation remains flexible and maintainable. Customize further with plugins in the marketplace.

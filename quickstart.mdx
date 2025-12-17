@@ -1,0 +1,136 @@
+---
+title: Get Started with GEO.fan
+description: Quickly set up your first documentation space and begin organizing your project docs.
+---
+
+## Overview
+
+Get up and running with GEO.fan in minutes. This guide walks you through creating an account, setting up your first project, navigating the dashboard, and creating your initial document. GEO.fan provides a powerful space to organize project documentation with MDX support, version control, and collaborative features.
+
+<Callout kind="tip">
+  Use your brand color `#3B82F6` in custom themes for a cohesive look.
+</Callout>
+
+## Quickstart Steps
+
+Follow these steps to launch your first documentation space.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Visit [geo.fan](https://geo.fan) and click **Sign Up**.
+
+    Fill in your email, password, and team name. Verify your email to activate the account.
+  </Step>
+
+  <Step title="Set Up Project" icon="plus">
+    From the dashboard, select **New Project**.
+
+    Enter project details:
+
+    ```
+    Name: My Project Docs
+    Description: Organized docs for my app
+    Slug: my-project-docs
+    ```
+
+    Choose public or private visibility.
+  </Step>
+
+  <Step title="Navigate Dashboard" icon="layout">
+    Access key sections:
+
+    - **Documents**: Manage pages and folders
+    - **Settings**: Configure themes and integrations
+    - **Analytics**: View visitor stats
+    - **Members**: Invite collaborators
+  </Step>
+
+  <Step title="Create Document" icon="file-text">
+    Click **New Document** > **Blank Page**.
+
+    Add frontmatter and content. Publish to make it live.
+  </Step>
+</Steps>
+
+## Dashboard Navigation
+
+The dashboard centralizes your documentation workflow.
+
+<Columns cols={2}>
+  <Card title="Documents" icon="file" href="/docs/documents">
+    Create, edit, and organize MDX pages with folders and search.
+  </Card>
+
+  <Card title="Themes" icon="palette" href="/docs/themes">
+    Customize with your brand color `#3B82F6` and layouts.
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/docs/integrations">
+    Connect GitHub, Slack, and custom webhooks.
+  </Card>
+
+  <Card title="Analytics" icon="bar-chart-3" href="/docs/analytics">
+    Track page views and engagement.
+  </Card>
+</Columns>
+
+## Create Your First Document
+
+Start with a basic MDX page. Use the editor or import from GitHub.
+
+<Tabs>
+  <Tab title="Web Editor" icon="edit-3">
+    Paste this starter template:
+
+    ```mdx
+    ---
+    title: Welcome
+    description: Your project homepage.
+    ---
+
+    ## Introduction
+
+    Welcome to your GEO.fan docs.
+    ```
+  </Tab>
+
+  <Tab title="GitHub Import" icon="github">
+    Connect your repo and sync automatically.
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="MDX,YAML">
+  ```mdx
+  ---
+  title: API Reference
+  ---
+
+  ## Endpoints
+
+  Use `{API_KEY}` for auth.
+  ```
+  ```yaml
+  title: API Reference
+  description: Endpoints and params
+  sidebar:
+    - /api/intro
+    - /api/users
+  ```
+</CodeGroup>
+
+## Next Steps
+
+Explore advanced features to enhance your docs.
+
+<Expandable title="Advanced Customization" default-open="false">
+  Integrate custom components and deploy via CI/CD.
+
+  ```bash
+  npm install geo-fan-sdk
+  geo-fan deploy --project my-project-docs
+  ```
+</Expandable>
+
+<Callout kind="success">
+  Your first doc is live! Share the URL: `https://geo.fan/my-project-docs`.
+</Callout>

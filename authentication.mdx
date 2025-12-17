@@ -1,0 +1,155 @@
+---
+title: Authentication and Access Control
+description: Learn how to secure your documentation spaces with user authentication and permissions.
+---
+
+## Overview
+
+Secure your GEO.fan documentation spaces with robust authentication and granular permissions. You manage access through user accounts, API keys, and role-based controls. This ensures only authorized team members edit sensitive content.
+
+<Callout kind="info">
+  Enable authentication in your space settings to protect public documentation from unauthorized changes.
+</Callout>
+
+## Account Registration and Login
+
+Create accounts for your team to collaborate securely.
+
+<Steps>
+  <Step title="Sign Up" icon="user-plus">
+    Visit `https://app.geo.fan/register` and provide your email and password.
+    
+    Confirm your email via the verification link sent to your inbox.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Navigate to `https://app.geo.fan/login`.
+    
+    Enter your credentials or use OAuth providers.
+  </Step>
+  <Step title="Two-Factor Authentication" icon="shield">
+    Enable 2FA in account settings for added security.
+    
+    Scan the QR code with your authenticator app.
+  </Step>
+</Steps>
+
+<Tabs>
+  <Tab title="Web Login" icon="globe">
+    Use the browser interface for interactive sessions.
+  </Tab>
+  <Tab title="API Login" icon="api">
+    Generate tokens for programmatic access.
+  </Tab>
+</Tabs>
+
+## API Keys and Tokens
+
+Generate API keys to integrate GEO.fan with your tools.
+
+<CodeGroup tabs="JavaScript,Python,cURL">
+  ```javascript
+  const response = await fetch('https://api.geo.fan/v1/auth/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Basic ' + btoa('your-email:your-password')
+    },
+    body: JSON.stringify({ scope: 'read write' })
+  });
+  const { access_token } = await response.json();
+  ```
+  ```python
+  import requests
+  
+  response = requests.post(
+    'https://api.geo.fan/v1/auth/token',
+    auth=('your-email', 'your-password'),
+    json={'scope': 'read write'}
+  )
+  access_token = response.json()['access_token']
+  ```
+  ```bash
+  curl -X POST https://api.geo.fan/v1/auth/token \
+    -u your-email:your-password \
+    -H "Content-Type: application/json" \
+    -d '{"scope": "read write"}'
+  ```
+</CodeGroup>
+
+<Response tabs="200,401">
+```json
+{
+  "access_token": "geo_fan_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "expires_in": 3600,
+  "token_type": "Bearer"
+}
+```
+
+```json
+{
+  "error": "invalid_credentials",
+  "message": "Email or password incorrect"
+}
+```
+</Response>
+
+Use `<ParamField>` for required headers:
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer token: `Bearer YOUR_ACCESS_TOKEN`.
+</ParamField>
+
+<ParamField query="scope" param-type="string" required="false">
+  Permissions like `read`, `write`, or `admin`.
+</ParamField>
+
+## Role-Based Access Control
+
+Assign roles to control permissions across your documentation spaces.
+
+<Columns cols={2}>
+  <Card title="Viewer" icon="eye" horizontal>
+    Read-only access to documentation.
+    
+    Ideal for stakeholders.
+  </Card>
+  <Card title="Editor" icon="edit-3" horizontal>
+    Edit and publish content.
+    
+    For content writers.
+  </Card>
+  <Card title="Admin" icon="shield" horizontal>
+    Manage users and settings.
+    
+    Full space control.
+  </Card>
+</Columns>
+
+## Multi-User Collaboration
+
+Invite team members and manage shared access.
+
+<Expandable title="Invite Users" default-open="true">
+  1. Go to space settings > Members.
+  2. Enter email and select role.
+  3. Send invitation link.
+  
+  Users accept via email to join instantly.
+</Expandable>
+
+<ExpandableGroup>
+  <Expandable title="Permission Troubleshooting">
+    Check role assignments if edits fail.
+    
+    Audit logs track all changes.
+  </Expandable>
+  <Expandable title="Revoke Access">
+    Remove users from Members list.
+    
+    Tokens expire automatically.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+  Rotate API keys regularly and use least-privilege roles for security.
+</Callout>

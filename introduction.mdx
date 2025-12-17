@@ -1,0 +1,124 @@
+---
+title: Welcome to GEO.fan
+description: An overview of GEO.fan, a platform for organizing and managing project documentation with ease and efficiency.
+---
+
+## Overview
+
+GEO.fan empowers you to create, organize, and manage your project documentation seamlessly. You get a centralized space to build comprehensive guides, API references, and tutorials using powerful MDX components. Whether you document software projects, internal wikis, or product handbooks, GEO.fan streamlines the process with intuitive tools and rich formatting options.
+
+## What is GEO.fan?
+
+GEO.fan is your default documentation hub. You can structure content hierarchically, embed interactive elements like tabs and steps, and ensure consistent branding across all pages. It supports advanced MDX syntax for dynamic components, making your docs engaging and professional.
+
+<Callout kind="info">
+  GEO.fan uses brand color `#3B82F6` for primary elements. Apply it consistently in custom themes or CSS.
+</Callout>
+
+## Key Benefits and Use Cases
+
+Discover the core advantages through these feature highlights.
+
+<Columns cols={3}>
+  <Card title="Centralized Management" icon="database" href="/docs/management">
+    Organize all your docs in one place. You search, edit, and collaborate effortlessly.
+  </Card>
+  <Card title="Rich Components" icon="components" href="/docs/components">
+    Use `<Tabs>`, `<Steps>`, and more to create interactive content without custom code.
+  </Card>
+  <Card title="Custom Branding" icon="palette" href="/docs/branding">
+    Customize with your colors like `#3B82F6` and logos for a branded experience.
+  </Card>
+</Columns>
+
+Common use cases include developer portals, product manuals, and team knowledge bases. You deploy quickly and scale as your projects grow.
+
+## Get Started in Minutes
+
+Follow these steps to set up your first documentation site.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at `https://geo.fan` and verify your email.
+  </Step>
+  <Step title="New Project" icon="plus">
+    Click "New Space" and name it, e.g., "My Project Docs".
+  </Step>
+  <Step title="Add Pages" icon="file-text">
+    Create `introduction.mdx` and start writing with MDX syntax.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Hit publish to share your live documentation site.
+  </Step>
+</Steps>
+
+## Multi-Language Integration Examples
+
+Integrate GEO.fan APIs across languages.
+
+<CodeGroup tabs="JavaScript,Python,cURL">
+  ```javascript
+  const response = await fetch('https://api.geo.fan/v1/docs', {
+    headers: { 'Authorization': 'Bearer YOUR_API_KEY' }
+  });
+  const docs = await response.json();
+  console.log(docs);
+  ```
+  ```python
+  import requests
+  response = requests.get(
+      'https://api.geo.fan/v1/docs',
+      headers={'Authorization': 'Bearer YOUR_API_KEY'}
+  )
+  docs = response.json()
+  print(docs)
+  ```
+  ```bash
+  curl -H "Authorization: Bearer YOUR_API_KEY" \
+       https://api.geo.fan/v1/docs
+  ```
+</CodeGroup>
+
+## Use Cases by Team
+
+Explore tailored workflows.
+
+<Tabs>
+  <Tab title="Developers" icon="code">
+    Build API references with `<Request>` and `<Response>` components.
+    
+    You embed live examples and parameter tables for clarity.
+  </Tab>
+  <Tab title="Product Teams" icon="package">
+    Create user guides using `<Steps>` and `<Columns>` for visual appeal.
+    
+    Share onboarding flows that engage users.
+  </Tab>
+  <Tab title="Support" icon="help-circle">
+    Maintain FAQs with `<ExpandableGroup>` for collapsible details.
+    
+    Reduce ticket volume with self-service docs.
+  </Tab>
+</Tabs>
+
+## Brand Guidelines
+
+<Expandable title="Detailed Brand Guidelines" default-open="false">
+
+Adhere to these rules for consistency:
+
+- **Primary Color:** `#3B82F6` (use for buttons, links, headers)
+- **Typography:** Sans-serif fonts, 16px base size
+- **Icons:** Lucide library with blue tint matching `#3B82F6`
+
+| Element       | Color       | Usage                  |
+|---------------|-------------|------------------------|
+| Primary Button| `#3B82F6`  | Actions and CTAs      |
+| Text          | `#1F2937`  | Body and headings     |
+| Background    | `#FFFFFF`  | Main content areas    |
+
+Avoid overuse of secondary colors to maintain focus.
+
+</Expandable>
+
+This setup ensures your documentation remains professional and on-brand. Start building today!

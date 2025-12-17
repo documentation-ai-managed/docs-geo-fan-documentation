@@ -1,0 +1,145 @@
+---
+title: Changelog
+description: Track updates, new features, and improvements in GEO.fan.
+---
+
+## Recent Releases
+
+Stay current with GEO.fan by reviewing the latest updates. You access new features and fixes through automatic updates or manual upgrades.
+
+<Columns cols={3}>
+  <Card title="v1.2.0" icon="zap" href="#v120">
+    Enhanced performance and new collaboration tools.
+  </Card>
+  <Card title="v1.1.0" icon="settings" href="#v110">
+    Improved documentation workflows.
+  </Card>
+  <Card title="v1.0.0" icon="rocket" href="#v100">
+    Initial stable release.
+  </Card>
+</Columns>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added real-time collaboration for teams editing documentation simultaneously.
+- Introduced version history with diff views for tracking changes.
+
+## Improvements
+
+- Optimized search performance by `>40%` for large documentation sites.
+- Enhanced Markdown rendering with better table and diagram support.
+
+## Bug Fixes
+
+- Fixed rendering issues with nested code blocks.
+- Resolved authentication errors during project imports.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Custom themes with brand color support, like `#3B82F6`.
+- Integrated analytics dashboard for page views and engagement.
+
+## Bug Fixes
+
+- Corrected export failures for MDX files with complex components.
+- Patched security vulnerability in webhook integrations.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Core documentation builder with MDX component support.
+- Project organization with folders and search.
+- GitHub integration for seamless syncing.
+
+## Breaking Changes
+
+- Updated configuration format; migrate your `geo-fan.config.js` files.
+
+</Update>
+
+## Upgrading to the Latest Version
+
+Follow these steps to upgrade GEO.fan and benefit from the newest features.
+
+<Steps>
+  <Step title="Check Current Version" icon="package">
+    Run the version check command:
+
+    ```bash
+    npx geo-fan --version
+    ```
+  </Step>
+  <Step title="Update Package" icon="download">
+    Use your preferred package manager:
+
+    <Tabs>
+      <Tab title="npm" icon="npm">
+        ```bash
+        npm update geo-fan@latest
+        ```
+      </Tab>
+      <Tab title="yarn" icon="yarn">
+        ```bash
+        yarn upgrade geo-fan@latest
+        ```
+      </Tab>
+      <Tab title="pnpm" icon="package">
+        ```bash
+        pnpm update geo-fan@latest
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  <Step title="Rebuild Site" icon="refresh-cw">
+    Rebuild your documentation:
+
+    ```bash
+    npx geo-fan build
+    ```
+  </Step>
+  <Step title="Deploy Changes" icon="upload-cloud">
+    Deploy to your hosting provider, such as Vercel or Netlify.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Backup your `docs/` folder before upgrading to avoid data loss.
+</Callout>
+
+## Upcoming Changes
+
+<Expandable title="Preview v1.3.0 Features" default-open="false">
+
+You can expect AI-assisted content generation and advanced SEO tools in the next release. Test beta versions via:
+
+```bash
+npm install geo-fan@beta
+```
+
+</Expandable>
+
+## Ways to Stay Updated
+
+Subscribe to updates through these channels:
+
+<Tabs>
+  <Tab title="GitHub Releases" icon="github">
+    Follow [GEO.fan GitHub](https://github.com/geo-fan/docs) for release notifications and changelogs.
+  </Tab>
+  <Tab title="Newsletter" icon="mail">
+    Sign up at geo-fan.com/newsletter for monthly summaries.
+  </Tab>
+</Tabs>
+
+<Callout kind="info">
+  Report issues or suggest features on GitHub. Your feedback shapes GEO.fan.
+</Callout>
